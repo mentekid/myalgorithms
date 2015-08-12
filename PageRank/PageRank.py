@@ -1,3 +1,9 @@
+""" A (slow and lazily written) PageRank implementation you should not use
+for anything serious
+Author: Yannis Mentekidis
+Date: June 2, 2015
+"""
+
 from __future__ import division
 import numpy
 from random import random
