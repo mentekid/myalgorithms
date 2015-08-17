@@ -4,29 +4,49 @@ Date: August 12, 2015
 """
 
 class Node:
+    """Node of a LinkedList
+
+    Contains information about the index, location, and content of
+    a LinkedList Node:
+        idx - ascending number of the node
+        value - the 'content' of the node
+        prev - previous node
+        nxt - next node
+    """
+
     def __init__(self, idx, value, prev = None, nxt = None):
+        """The constructor."""
         self.idx = idx
         self.value = value
         self.prev = prev
         self.nxt = nxt
 
     def setnxt(self, nxt):
+        """Setter for the nxt attribute"""
         self.nxt = nxt
 
     def getnxt(self):
+        """Getter for the nxt attribute"""
         return self.nxt
 
     def setprev(self, prev):
+        """Setter for the prev attribute"""
         self.prev = prev
 
     def getprev(self):
+        """Getter for the prev attribute"""
         return self.prev
 
     def __repr__(self):
+        """print operator overload"""
         return "[" + str(self.idx) + ":" + str(self.value) + "]"
 
 class LinkedList:
-    """
+    """Linked List data structure
+
+    Implements the basic functions of a linked list.
+
+    Testing:
     >>> L = LinkedList(['a', 'b', 'c', 'd']) #test constructor and overloads
     >>> print L
     [0:a], [1:b], [2:c], [3:d]
@@ -74,10 +94,19 @@ class LinkedList:
     >>> L.search('f')
     -1
 
+    >>> L2 = L.copy() #test copy functionality
+    >>> junk = L2.pop()
+    >>> L.insert('d')
+    >>> L2
+    [0:b], [1:c]
+    >>> L
+    [0:a], [1:b], [2:c], [3:d]
+
+
     """
 
     def __init__(self, alist = list()):
-        """Insert items from alist into the linked list"""
+        """Constructor: Insert items from alist into the linked list"""
         self.length = len(alist) #first empty position in LinkedList
 
         if self.length == 0: #empty list -> empty LinkedList
@@ -94,6 +123,7 @@ class LinkedList:
 
 
     def __len__(self):
+        """Overload for the len() operator"""
         return self.length
 
 
@@ -111,6 +141,16 @@ class LinkedList:
     def __getitem__(self, index):
         """Overload for [] operation"""
         return self.get(index)
+
+    def copy(self):
+        """Returns a copy of the Linked List (not a pointer) """
+        newList = LinkedList() #blank list
+        current = self.start
+        while current is not None:
+            newVal = current.value
+            newList.append(newVal)
+            current = current.getnxt()
+        return newList
 
     def append(self, item):
         """Insert a single item at the end of the LinekdList"""

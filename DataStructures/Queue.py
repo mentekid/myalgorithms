@@ -4,7 +4,9 @@ Date: August 12, 2015
 """
 
 class queue:
-    """ Testing
+    """Queue data structure
+
+    Testing:
     >>> alist = [1, 2, 3, 4, 5] #test constructor
     >>> Q = queue(alist)
     >>> print Q #test __repr__

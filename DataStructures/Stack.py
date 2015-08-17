@@ -4,7 +4,9 @@ Date: August 12, 2015
 """
 
 class stack:
-    """
+    """Stack data structure
+
+    Testing:
     >>> alist = [1, 2, 3, 4, 5]
     >>> S = stack(alist)
     >>> print S

@@ -1,2 +1,6 @@
 #ignore pyc files
 *.pyc
+
+#ignore Doxygen configuration files and folders
+Doxy*
+latex/*
