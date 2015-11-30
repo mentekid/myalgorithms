@@ -4,3 +4,6 @@
 #ignore Doxygen configuration files and folders
 Doxy*
 latex/*
+
+#ignore practice folder
+practice
