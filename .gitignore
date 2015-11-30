@@ -6,4 +6,7 @@ Doxy*
 latex/*
 
 #ignore practice folder
-practice
+practice/*
+
+#ignore ghosts
+*~
