@@ -5,6 +5,7 @@
 Author: Yannis Mentekidis
 e-mail: mentekid@gmail.com
 Date: August 11, 2015
+Edit: November 21, 2015
 """
 
 import string
